@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="grid-container">
+        <div class="grid-top">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>  
+            <div class="grid-item"></div>
+        </div>
+        <div class="grid-mid">
+            <div class="grid-item">
+                <p class="shop" *ngIf="logo_clicked" onclick="to_catalogues()">shop</p>
+            </div>
+            <div class="grid-item" onclick="to_catalogues()">
+                <p class="shop" *ngIf="logo_clicked">shop</p>
+            </div>
+            <div class="grid-item" (click)="to_catalogues()">
+                <p class="shop" *ngIf="logo_clicked">shop</p>
+            </div>  
+            <div class="grid-item" (click)="to_catalogues()">
+                <p class="shop" *ngIf="logo_clicked">shop</p>
+            </div>
+            <div class="grid-item" (click)="to_catalogues()">
+                <p class="shop" *ngIf="logo_clicked">shop</p>
+            </div>
+            <div class="grid-item" (click)="to_catalogues()">
+                <p class="shop" *ngIf="logo_clicked">shop</p>
+            </div>  
+            <div class="grid-item" (click)="to_catalogues()">
+                <p class="shop" *ngIf="logo_clicked">shop</p>
+            </div>
+            <div class="grid-item" (click)="to_catalogues()">
+                <p class="shop" *ngIf="logo_clicked">shop</p>
+            </div>  
+    
+        </div>
+        <div class="grid-top">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>  
+            <div class="grid-item"></div>
+        </div>
+    </div>
+    <div class="center-box">
+        <div class="image-container" (click)="logo_click()" *ngIf="!logo_clicked"> 
+            <div class="default-image"></div> 
+            <div class="hover-image"></div> 
+        </div> 
+    </div>
+</div>
