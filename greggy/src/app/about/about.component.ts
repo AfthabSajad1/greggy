@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
+  constructor(private router: Router){}
+
+  back_to_details(){
+    this.router.navigateByUrl('/details');
+  }
 }

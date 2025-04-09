@@ -1,49 +1,34 @@
 <div class="container">
     <div class="grid-container">
         <div class="grid-top">
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>  
-            <div class="grid-item"></div>
+            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
+            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
+            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>  
+            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
         </div>
         <div class="grid-mid">
-            <div class="grid-item">
-                <p class="shop" *ngIf="logo_clicked" onclick="to_catalogues()">shop</p>
-            </div>
-            <div class="grid-item" onclick="to_catalogues()">
-                <p class="shop" *ngIf="logo_clicked">shop</p>
-            </div>
-            <div class="grid-item" (click)="to_catalogues()">
-                <p class="shop" *ngIf="logo_clicked">shop</p>
-            </div>  
-            <div class="grid-item" (click)="to_catalogues()">
-                <p class="shop" *ngIf="logo_clicked">shop</p>
-            </div>
-            <div class="grid-item" (click)="to_catalogues()">
-                <p class="shop" *ngIf="logo_clicked">shop</p>
-            </div>
-            <div class="grid-item" (click)="to_catalogues()">
-                <p class="shop" *ngIf="logo_clicked">shop</p>
-            </div>  
-            <div class="grid-item" (click)="to_catalogues()">
-                <p class="shop" *ngIf="logo_clicked">shop</p>
-            </div>
-            <div class="grid-item" (click)="to_catalogues()">
-                <p class="shop" *ngIf="logo_clicked">shop</p>
-            </div>  
-    
+            <ng-container *ngFor="let n of nums">
+                <ng-template [ngTemplateOutlet]="greggyShopTemplate">
+                </ng-template>
+           </ng-container>    
         </div>
         <div class="grid-top">
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>  
-            <div class="grid-item"></div>
+            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
+            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
+            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>  
+            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
         </div>
     </div>
-    <div class="center-box">
-        <div class="image-container" (click)="logo_click()" *ngIf="!logo_clicked"> 
+    <div class="center-box" *ngIf="!logo_clicked">
+        <div class="image-container" (click)="logo_click()" > 
             <div class="default-image"></div> 
             <div class="hover-image"></div> 
         </div> 
     </div>
 </div>
+
+<ng-template #greggyShopTemplate let-product>
+    <div class="grid-item pointer" (click)="to_catalogues()">
+        <p class="shop" *ngIf="logo_clicked">shop</p>
+    </div>
+</ng-template>

@@ -1,15 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-misc',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './misc.component.html',
   styleUrl: './misc.component.scss'
 })
 export class MiscComponent {
 
+  num: number[] = [0,1,2,3];
   constructor(private router: Router){}
 
   switch_page(){

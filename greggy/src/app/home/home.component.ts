@@ -11,6 +11,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class HomeComponent {
 
+  nums: number[] = [0,1,2,3,4,5,6,7];
   constructor(private router: Router){}
   logo_clicked: boolean = false;
 
@@ -19,7 +20,9 @@ export class HomeComponent {
   }
 
   to_catalogues(){
-    console.log("in to catalogues")
-    this.router.navigateByUrl('/products')
+
+    if(this.logo_clicked){
+      this.router.navigateByUrl('/products')
+    }
   }
 }

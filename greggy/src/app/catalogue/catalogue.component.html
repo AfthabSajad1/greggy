@@ -1,75 +1,43 @@
 <div class="container">
     <div class="grid-container">
         <div class="grid-top">
-            <div class="grid-item" (click)="switch_page()">
-                <p class="shop">greggy</p>
-            </div>
-            <div class="grid-item" (click)="switch_page()">
-                <p class="shop">greggy</p>
-            </div>
-            <div class="grid-item" (click)="switch_page()">
-                <p class="shop">greggy</p>
-            </div>  
-            <div class="grid-item" (click)="switch_page()">
-                <p class="shop">greggy</p>
-            </div>
+            <ng-container *ngFor="let n of num">
+                <ng-template [ngTemplateOutlet]="greggyTopTemplate">
+                </ng-template>
+           </ng-container>
         </div>
         <div class="grid-mid">
-            <div class="grid-item">
-                <div class="product-img" (click)="go_to_product()">
-                    //product image here
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="product-img" (click)="go_to_product()">
-                    //product image here
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="product-img" (click)="go_to_product()">
-                    //product image here
-                </div>
-            </div>  
-            <div class="grid-item">
-                <div class="product-img" (click)="go_to_product()">
-                    //product image here
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="product-img" (click)="go_to_product()">
-                    //product image here
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="product-img" (click)="go_to_product()">
-                    //product image here
-                </div>
-            </div>  
-            <div class="grid-item">
-                <div class="product-img" (click)="go_to_product()">
-                    //product image here
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="product-img" (click)="go_to_product()">
-                    //product image here
-                </div>
-            </div>  
-    
+            <ng-container *ngFor="let product of products">
+                 <ng-template [ngTemplateOutlet]="productTemplate" [ngTemplateOutletContext]="{ $implicit: product }">
+                 </ng-template>
+            </ng-container>
         </div>
         <div class="grid-top">
-            <div class="grid-item" (click)="switch_page()">
-                <p class="shop">greggy</p>
-            </div>
-            <div class="grid-item" (click)="switch_page()">
-                <p class="shop">greggy</p>
-            </div>
-            <div class="grid-item" (click)="switch_page()">
-                <p class="shop">greggy</p>
-            </div>  
-            <div class="grid-item" (click)="switch_page()">
-                <p class="shop">greggy</p>
-            </div>
+            <ng-container *ngFor="let n of num">
+                <ng-template [ngTemplateOutlet]="greggyBottomTemplate">
+                </ng-template>
+           </ng-container>
         </div>
     </div>
 </div>
+
+<ng-template #productTemplate let-product>
+    <div class="grid-item" (click)="go_to_product(product.id)">
+        <div class="product-img">
+            <img [src]="product.img1" class="img img1">
+            <img [src]="product.img2" class="img img2">
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #greggyTopTemplate let-product>
+    <div class="grid-item" (click)="switch_page()">
+        <p class="greggy top primary-color">greggy</p>
+    </div>
+</ng-template>
+
+<ng-template #greggyBottomTemplate let-product>
+    <div class="grid-item" (click)="switch_page()">
+        <p class="greggy bottom primary-color">greggy</p>
+    </div>
+</ng-template>
