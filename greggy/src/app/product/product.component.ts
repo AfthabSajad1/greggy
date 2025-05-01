@@ -4,6 +4,7 @@ import { ServiceService } from '../service.service';
 import { Product } from '../product';
 import { CartServiceService } from '../cart-service.service';
 import { LocalService } from '../local.service';
+import { Cart } from '../cart';
 
 @Component({
   selector: 'app-product',
@@ -14,14 +15,18 @@ import { LocalService } from '../local.service';
 })
 export class ProductComponent {
 
-  product: Product = {"id":1,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true};
+  product: Product = {
+    id: 0,
+    name: '',
+    description: '',
+    img1: '',
+    img2: '',
+    img3: '',
+    img4: '',
+    available_no: 0,
+    price: 0,
+    is_on_display: false
+  };
 
   expand1: boolean = false;
   expand2: boolean = false;
@@ -63,11 +68,22 @@ export class ProductComponent {
   }
 
   getProductDetails(id: any){
-    this.service.getProduct(id);
+    this.service.getProduct(id).subscribe((data: any) => {
+      this.product = data;
+    });
   }
 
   add_to_cart(){
-    // localStorage.setItem('cart', JSON.stringify(this.product))
+    let cart: Cart[] = JSON.parse(localStorage.getItem('cart') || '[]');
+    console.log(cart)
+    const existing = cart.find(item =>item.product.id === this.product.id)
+    console.log(existing)
+    if(existing){
+      existing.quantity++;
+    } else{
+      cart.push({product: this.product,quantity: 1});      
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
     this.go_to_cart();
   }
 }

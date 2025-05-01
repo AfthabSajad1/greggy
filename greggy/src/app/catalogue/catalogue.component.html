@@ -2,7 +2,7 @@
     <div class="grid-container">
         <div class="grid-top">
             <ng-container *ngFor="let n of num">
-                <ng-template [ngTemplateOutlet]="greggyTopTemplate">
+                <ng-template [ngTemplateOutlet]="greggyTemplate">
                 </ng-template>
            </ng-container>
         </div>
@@ -14,7 +14,7 @@
         </div>
         <div class="grid-top">
             <ng-container *ngFor="let n of num">
-                <ng-template [ngTemplateOutlet]="greggyBottomTemplate">
+                <ng-template [ngTemplateOutlet]="greggyTemplate">
                 </ng-template>
            </ng-container>
         </div>
@@ -30,14 +30,6 @@
     </div>
 </ng-template>
 
-<ng-template #greggyTopTemplate let-product>
-    <div class="grid-item" (click)="switch_page()">
-        <p class="greggy top primary-color">greggy</p>
-    </div>
-</ng-template>
-
-<ng-template #greggyBottomTemplate let-product>
-    <div class="grid-item" (click)="switch_page()">
-        <p class="greggy bottom primary-color">greggy</p>
-    </div>
+<ng-template #greggyTemplate let-product>
+    <div class="grid-item greggy" (click)="switch_page()"></div>
 </ng-template>

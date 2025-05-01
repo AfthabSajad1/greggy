@@ -14,77 +14,10 @@ import { Product } from '../product';
 export class CatalogueComponent {
 
   num: number[] = [0,1,2,3];
-  products: Product[] = [{"id":1,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true},
-    {"id":2,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true},
-    {"id":3,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true},
-    {"id":4,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true},
-    {"id":5,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true},
-    {"id":6,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true},
-    {"id":7,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true},
-    {"id":8,
-    "name":"crackle vase",
-    "description":"snap. crackle. vase. introducing the crackle vase by seth featuring a new specialty glaze in light blue.",
-    "img1":"https://github.com/greggy-in/product-images/blob/main/231017_Houseplant_Q4_PDP50042-Fcopy_1080x.png?raw=true",
-    "img2":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseLifestyle_1080x.png?raw=true",
-    "img3":"https://github.com/greggy-in/product-images/blob/main/CrackleVasePDP_1080x.png?raw=true",
-    "img4":"https://github.com/greggy-in/product-images/blob/main/CrackleVaseSeamless_1080x.png?raw=true",
-    "available_no":10,"price":6000,"is_on_display":true},
-  ];
+  products: Product[] = []
 
   constructor(private router: Router,
-    private service: ServiceService
-  ){}
-
-  show_greggy_details: boolean = false;
+    private service: ServiceService){}
 
   switch_page(){
     this.router.navigateByUrl("/details")
@@ -96,7 +29,8 @@ export class CatalogueComponent {
   }
 
   ngOnInit(){
-    this.service.getAllProducts();
-
+    this.service.getAllProducts().subscribe((data: any) => {
+      this.products = data;
+    });
   }
 }

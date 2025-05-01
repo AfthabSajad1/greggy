@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,13 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceService {
 
-  constructor() { }
+  private baseUrl: string = 'http://localhost:8080/api/products';
+
+  constructor(private http: HttpClient) { }
 
   getAllProducts(){
-    console.log("get all products");
+    return this.http.get(this.baseUrl);
   }
 
   getProduct(id: number){
-    console.log("get selected product:", id);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 }

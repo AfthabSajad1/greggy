@@ -2,42 +2,34 @@
     <div class="grid-container">
         <div class="grid-top">
             <ng-container *ngFor="let n of num">
-                <ng-template [ngTemplateOutlet]="greggyTopTemplate">
+                <ng-template [ngTemplateOutlet]="greggyTemplate">
                 </ng-template>
            </ng-container>
         </div>
         <div class="grid-mid">
             <div class="grid-item"></div>  
             <div class="grid-item pointer" (click)="go_to_about()">
-                <p class="shop-misc">about</p>
+                <div class="shop-misc">about</div>
             </div>  
             <div class="grid-item"></div>  
             <div class="grid-item"></div>  
             <div class="grid-item"></div>  
             <div class="grid-item"></div>  
             <div class="grid-item pointer" (click)="go_to_contact()">
-                <p class="shop-misc">contact us</p>
+                <div class="shop-misc">contact<br>us</div>
             </div>  
             <div class="grid-item"></div>  
     
         </div>
         <div class="grid-top">
             <ng-container *ngFor="let n of num">
-                <ng-template [ngTemplateOutlet]="greggyBottomTemplate">
+                <ng-template [ngTemplateOutlet]="greggyTemplate">
                 </ng-template>
            </ng-container>
         </div>
     </div>
 </div>
 
-<ng-template #greggyTopTemplate let-product>
-    <div class="grid-item pointer" (click)="switch_page()">
-        <p class="greggy top secondary-color">greggy</p>
-    </div>
-</ng-template>
-
-<ng-template #greggyBottomTemplate let-product>
-    <div class="grid-item pointer" (click)="switch_page()">
-        <p class="greggy bottom secondary-color">greggy</p>
-    </div>
+<ng-template #greggyTemplate let-product>
+    <div class="grid-item pointer greggy-secondary" (click)="switch_page()"></div>
 </ng-template>

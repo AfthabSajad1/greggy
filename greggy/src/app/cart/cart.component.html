@@ -27,30 +27,13 @@
                 <p class="shop">cart</p>
             </div>
             <div class="grid-item desc-grid">
-                <div class="description">
-                    <div class="item-list" [class.hide]="hideProduct">
-                        <div class="list">
-                            <img [src]="cart.img1" class="img">
-                        </div>
-                        <div class="list">
-                            {{cart.name}}
-                        </div>
-                        <div class="list">
-                            &#8377;{{cart.price}}
-                        </div>
-                        <!-- <div class="list">
-                            <div class="counter-wrapper">
-                                <button (click)="decrement()" class="icon-button">
-                                  <span class="material-icons">delete</span>
-                                </button>
-                                <span class="quantity">{{ quantity }}</span>
-                                <button (click)="increment()" class="icon-button">
-                                  <span class="material-icons">add</span>
-                                </button>
-                              </div>
-                        </div> -->
-                    </div>
+                <div class="shop empty" *ngIf="isCartEmpty">
+                        your cart is empty
                 </div>
+                <ng-container *ngFor="let item of cartItems">
+                    <ng-template [ngTemplateOutlet]="cartTemplate" [ngTemplateOutletContext]="{ $implicit: item }">
+                    </ng-template>
+               </ng-container>
             </div>  
             <div class="grid-item"></div>
             <div class="grid-item"></div>  
@@ -59,11 +42,40 @@
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <div class="grid-item">
-                <p class="greggy bottom primary-color">total: &#8377;{{cart.price}}</p>
+                <p class="checkout bottom primary-color">total: &#8377;{{totalPrice}}</p>
             </div>  
-            <div class="grid-item pointer" [class.disabled]="isCartEmpty" (click)="redirect_to_razorpay()">
-                <p class="greggy bottom primary-color">checkout</p>
+            <div class="grid-item pointer" [class.disabled]="isCartEmpty" (click)="go_to_order()">
+                <p class="checkout bottom primary-color">checkout</p>
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #cartTemplate let-item>
+    <div class="description">
+        <div class="item-list">
+            <div class="list pointer" (click)="go_to_product(item)">
+                <img [src]="item.product.img1" class="img">
+            </div>
+            <div class="product-summary">
+                <div class="name">{{item.product.name}}</div>
+                <div class="price">&#8377;{{item.product.price}}</div>
+            </div>
+            <div class="list">
+                <div class="button pointer" (click)="increment(item)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="5vh" height="" fill="#7295a5" viewBox="0 0 24 24">
+                        <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>  
+                </div>
+                <div class="quantity">
+                    {{item.quantity}}
+                </div>
+                <div class="button pointer" (click)="decrement(item)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="5vh" height="" fill="#7295a5" viewBox="0 0 24 24">
+                        <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                      </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

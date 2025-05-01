@@ -78,7 +78,7 @@
 }
 
 .img{
-    max-width: 20vw;
+    width: 10vw;
     height: 20vh;   
 }
 
@@ -86,4 +86,34 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    color: $secondary_color;
+    border-radius: 1.5vh;
+    width: 5vh;
+    margin: 1vh;
+}
+
+.quantity{
+    display: flex;
+    justify-content: center;
+    margin: 1vh;
+}
+
+.product-summary{
+    display: flex;
+    flex-direction: column;
+}
+
+.price{
+    font-size: 3vh;
 }

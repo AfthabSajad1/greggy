@@ -31,9 +31,26 @@
 }
 
 .greggy{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 7vh;
-    margin: 0;
+    background-image: url(./../assets/logos/greggy_primary.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: content-box;
+}
+
+.greggy:hover{
+    background-image: url(./../assets/logos/greggy_secondary.png);
+}
+.greggy-secondary{
+    background-image: url(./../assets/logos/greggy_secondary.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: content-box;
+}
+
+.greggy-secondary:hover{
+    background-image: url(./../assets/logos/greggy_primary.png);
 }
 
 .top{
@@ -50,6 +67,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10.78vh;
     color: $primary_color;
+    text-align: center;
 }
 
 .shop-misc{
@@ -64,4 +82,10 @@
     background-color: $secondary_color;
     display: block; 
     background-size: cover; 
+}
+
+.checkout{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7vh;
+    margin: 0;
 }
