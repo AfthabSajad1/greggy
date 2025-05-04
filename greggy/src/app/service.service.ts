@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceService {
 
-  private baseUrl: string = 'http://localhost:8080/api/products';
+  private baseUrl: string = 'http://api.greggy.in:8080/api/products';
 
   constructor(private http: HttpClient) { }
 

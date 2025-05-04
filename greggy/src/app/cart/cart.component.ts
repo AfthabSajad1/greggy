@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {CommonModule, Location} from '@angular/common';
 import { Cart } from '../cart';
-import { ToasterService } from '../toaster.service';
 
 @Component({
   selector: 'app-cart',
@@ -17,8 +16,7 @@ export class CartComponent {
 
   isCartEmpty: boolean = true;
   constructor(private router: Router,
-    private location: Location,
-    private toaster: ToasterService
+    private location: Location
   ){}
 
   ngOnInit(){
@@ -42,7 +40,7 @@ export class CartComponent {
   
   go_to_order(){
     if(this.isCartEmpty){
-      this.toaster.show('warning', 'Please add items to your cart before Checkout!')
+      
     }else{
       this.router.navigate(["/order"])
     }
