@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PaymentService {
 
-  private baseUrl: string = 'http://api.greggy.in:8080/api/payment';
+  private baseUrl: string = 'https://api.greggy.in/api/payment';
 
   constructor(private http: HttpClient) {}
 
