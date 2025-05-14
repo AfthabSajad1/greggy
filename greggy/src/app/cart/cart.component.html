@@ -62,8 +62,10 @@
                 <div class="desc">cart</div>
             </div>
             <div class="grid-item">
-                <div class="desc empty" *ngIf="isCartEmpty">
-                        your cart is empty
+                <div class="grid-rest"  *ngIf="isCartEmpty">
+                    <div class="cart-empty">
+                            your cart is empty
+                    </div>
                 </div>
                 <ng-container *ngFor="let item of cartItems">
                     <ng-template [ngTemplateOutlet]="cartTemplate" [ngTemplateOutletContext]="{ $implicit: item }">
