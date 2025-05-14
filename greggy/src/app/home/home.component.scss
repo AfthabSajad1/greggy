@@ -19,77 +19,111 @@
     height: 100%;
 }
 
-.grid-mid{
-    height: 77vh;
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-}
+// @media (min-width: 1024px){
+    .grid-mid{
+        height: 77vh;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .grid-top{
+        height: 11.5vh;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .grid-item{
+        border: 0.25vh solid $primary_color;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .center-box{
+        display: flex;
+        height: 77vh;
+        width: auto;
+        justify-content: center; 
+        align-items: center;
+        position: relative; 
+    }
+    
+    .image-container { 
+        position: relative; 
+        display: inline-block; 
+        height: 77vh;
+        width: 50vh;
+        cursor: pointer;
+    } 
+     
+    .default-image { 
+        background-image: url("./../../assets/images/display_logo.png");
+        display: block; 
+        background-size: cover; 
+        height: 77vh;
+    } 
+     
+    .hover-image { 
+        display: none;
+        background-image: url("./../../assets/images/hover_logo.png");
+        background-size: cover; 
+        height: 77vh;
+    } 
+     
+    .image-container:hover .default-image { 
+        display: none;
+    } 
+     
+    .image-container:hover .hover-image { 
+        display: block; 
+    } 
+    
+    .hide{
+        display: none;
+    }
+    
+    .pointer:hover{
+        background-color: $primary_color;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .pointer:hover p{
+        color: $secondary_color;
+    }
+    
+    .desktop{
+        display: block;
+    }
+    
+    .mobile{
+        display: none;
+    }
+// }
 
-.grid-top{
-    height: 11.5vh;
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
+@media (max-width: 1023px){
+    .grid-item{
+        border: none;
+    }
 
-.grid-item{
-    border: 0.25vh solid $primary_color;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-}
+    .desktop{
+        display:none;
+    }
 
-.center-box{
-    display: flex;
-    height: 77vh;
-    width: auto;
-    justify-content: center; 
-    align-items: center;
-    position: relative; 
-}
+    .mobile{
+        display: block;
+        .grid-item{
+            border: 0.25vh solid $primary_color;
+        }
+    }
+    .shop{
+        font-size: 7.75vh;
+    }
 
-.image-container { 
-    position: relative; 
-    display: inline-block; 
-    height: 77vh;
-    width: 50vh;
-    cursor: pointer;
-} 
- 
-.default-image { 
-    background-image: url("./../../assets/images/display_logo.png");
-    display: block; 
-    background-size: cover; 
-    height: 77vh;
-} 
- 
-.hover-image { 
-    display: none;
-    background-image: url("./../../assets/images/hover_logo.png");
-    background-size: cover; 
-    height: 77vh;
-} 
- 
-.image-container:hover .default-image { 
-    display: none;
-} 
- 
-.image-container:hover .hover-image { 
-    display: block; 
-} 
-
-.hide{
-    display: none;
-}
-
-.pointer:hover{
-    background-color: $primary_color;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.pointer:hover p{
-    color: $secondary_color;
+    .default-image{
+        background-image: url("./../../assets/images/hover_logo.png");
+    }
 }

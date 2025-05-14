@@ -12,6 +12,7 @@ import { Router, RouterModule } from '@angular/router';
 export class HomeComponent {
 
   nums: number[] = [0,1,2,3,4,5,6,7];
+  xyz: number[] = [0,1,2,3];
   constructor(private router: Router){}
   logo_clicked: boolean = false;
 

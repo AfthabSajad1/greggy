@@ -1,31 +1,54 @@
 <div class="container">
     <div class="grid-container">
-        <div class="grid-top">
-            <ng-container *ngFor="let n of num">
-                <ng-template [ngTemplateOutlet]="greggyTemplate">
-                </ng-template>
-           </ng-container>
+        <div class="desktop">
+            <div class="grid-top">
+                <ng-container *ngFor="let n of num">
+                    <ng-template [ngTemplateOutlet]="greggyTemplate">
+                    </ng-template>
+               </ng-container>
+            </div>
+            <div class="grid-mid">
+                <div class="grid-item"></div>  
+                <div class="grid-item pointer" (click)="go_to_about()">
+                    <div class="shop-misc">about</div>
+                </div>  
+                <div class="grid-item"></div>  
+                <div class="grid-item"></div>  
+                <div class="grid-item"></div>  
+                <div class="grid-item"></div>  
+                <div class="grid-item pointer" (click)="go_to_contact()">
+                    <div class="shop-misc">contact<br>us</div>
+                </div>  
+                <div class="grid-item"></div>  
+        
+            </div>
+            <div class="grid-top">
+                <ng-container *ngFor="let n of num">
+                    <ng-template [ngTemplateOutlet]="greggyTemplate">
+                    </ng-template>
+               </ng-container>
+            </div>
         </div>
-        <div class="grid-mid">
-            <div class="grid-item"></div>  
+
+        <div class="mobile">
+            <div class="grid-top">
+                <ng-container>
+                    <ng-template [ngTemplateOutlet]="greggyTemplate">
+                    </ng-template>
+                </ng-container>
+            </div>
             <div class="grid-item pointer" (click)="go_to_about()">
-                <div class="shop-misc">about</div>
-            </div>  
-            <div class="grid-item"></div>  
-            <div class="grid-item"></div>  
-            <div class="grid-item"></div>  
-            <div class="grid-item"></div>  
+                <div class="desc">about</div>
+            </div>
             <div class="grid-item pointer" (click)="go_to_contact()">
-                <div class="shop-misc">contact<br>us</div>
+                <div class="desc ">contact us</div>
             </div>  
-            <div class="grid-item"></div>  
-    
-        </div>
-        <div class="grid-top">
-            <ng-container *ngFor="let n of num">
-                <ng-template [ngTemplateOutlet]="greggyTemplate">
-                </ng-template>
-           </ng-container>
+            <div class="grid-top">
+                <ng-container>
+                    <ng-template [ngTemplateOutlet]="greggyTemplate">
+                    </ng-template>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>

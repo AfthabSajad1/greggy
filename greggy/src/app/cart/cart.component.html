@@ -1,55 +1,88 @@
 <div class="container">
     <div class="grid-container">
-        <div class="grid-top">
-            <div class="grid-item pointer" (click)="back_to_product()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="6.38vw" height="8.62vh" viewBox="0 0 104.016 71.132" class="arrow">
-                    <g id="Group_1" data-name="Group 1" transform="translate(-96.984 -27.984)">
-                      <line id="Line_7" data-name="Line 7" x2="93" transform="translate(105.5 63.5)" fill="none" stroke="#789aa3" stroke-linecap="round" stroke-width="5"/>
-                      <line id="Line_8" data-name="Line 8" x1="39" y2="31.55" transform="translate(100.5 31.5)" fill="none" stroke="#789aa3" stroke-linecap="round" stroke-width="5"/>
-                      <line id="Line_9" data-name="Line 9" x1="39" y1="31.55" transform="translate(100.5 64.05)" fill="none" stroke="#789aa3" stroke-linecap="round" stroke-width="5"/>
-                    </g>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="6.38vw" height="8.62vh" viewBox="0 0 104.016 71.132" class="arrow-hover">
-                    <g id="Group_1" data-name="Group 1" transform="translate(-96.984 -27.984)">
-                      <line id="Line_7" data-name="Line 7" x2="93" transform="translate(105.5 63.5)" fill="none" stroke="#f6f2e1" stroke-linecap="round" stroke-width="5"/>
-                      <line id="Line_8" data-name="Line 8" x1="39" y2="31.55" transform="translate(100.5 31.5)" fill="none" stroke="#f6f2e1" stroke-linecap="round" stroke-width="5"/>
-                      <line id="Line_9" data-name="Line 9" x1="39" y1="31.55" transform="translate(100.5 64.05)" fill="none" stroke="#f6f2e1" stroke-linecap="round" stroke-width="5"/>
-                    </g>
-                </svg>
+        <div class="desktop">
+            <div class="grid-top">
+                <div class="grid-item pointer" (click)="back_to_product()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="6.38vw" height="8.62vh" viewBox="0 0 104.016 71.132" class="arrow">
+                        <g id="Group_1" data-name="Group 1" transform="translate(-96.984 -27.984)">
+                          <line id="Line_7" data-name="Line 7" x2="93" transform="translate(105.5 63.5)" fill="none" stroke="#789aa3" stroke-linecap="round" stroke-width="5"/>
+                          <line id="Line_8" data-name="Line 8" x1="39" y2="31.55" transform="translate(100.5 31.5)" fill="none" stroke="#789aa3" stroke-linecap="round" stroke-width="5"/>
+                          <line id="Line_9" data-name="Line 9" x1="39" y1="31.55" transform="translate(100.5 64.05)" fill="none" stroke="#789aa3" stroke-linecap="round" stroke-width="5"/>
+                        </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="6.38vw" height="8.62vh" viewBox="0 0 104.016 71.132" class="arrow-hover">
+                        <g id="Group_1" data-name="Group 1" transform="translate(-96.984 -27.984)">
+                          <line id="Line_7" data-name="Line 7" x2="93" transform="translate(105.5 63.5)" fill="none" stroke="#f6f2e1" stroke-linecap="round" stroke-width="5"/>
+                          <line id="Line_8" data-name="Line 8" x1="39" y2="31.55" transform="translate(100.5 31.5)" fill="none" stroke="#f6f2e1" stroke-linecap="round" stroke-width="5"/>
+                          <line id="Line_9" data-name="Line 9" x1="39" y1="31.55" transform="translate(100.5 64.05)" fill="none" stroke="#f6f2e1" stroke-linecap="round" stroke-width="5"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>  
+                <div class="grid-item"></div>
             </div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>  
-            <div class="grid-item"></div>
+            <div class="grid-mid pointer-none">
+                <div class="grid-item"></div>
+                <div class="grid-item">
+                    <p class="shop">cart</p>
+                </div>
+                <div class="grid-item desc-grid">
+                    <div class="shop empty" *ngIf="isCartEmpty">
+                            your cart is empty
+                    </div>
+                    <ng-container *ngFor="let item of cartItems">
+                        <ng-template [ngTemplateOutlet]="cartTemplate" [ngTemplateOutletContext]="{ $implicit: item }">
+                        </ng-template>
+                   </ng-container>
+                </div>  
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>  
+            </div>
+            <div class="grid-top">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item">
+                    <p class="checkout bottom primary-color">total: &#8377;{{totalPrice}}</p>
+                </div>  
+                <div class="grid-item pointer" [class.disabled]="isCartEmpty" (click)="go_to_order()">
+                    <p class="checkout bottom primary-color">checkout</p>
+                </div>
+            </div>
         </div>
-        <div class="grid-mid pointer-none">
-            <div class="grid-item"></div>
-            <div class="grid-item">
-                <p class="shop">cart</p>
+
+        <div class="mobile">
+            <div class="grid-top">
+                <ng-container>
+                    <ng-template [ngTemplateOutlet]="greggyTemplate">
+                    </ng-template>
+                </ng-container>
             </div>
-            <div class="grid-item desc-grid">
-                <div class="shop empty" *ngIf="isCartEmpty">
+            <div class="grid-item">
+                <div class="desc">cart</div>
+            </div>
+            <div class="grid-item">
+                <div class="desc empty" *ngIf="isCartEmpty">
                         your cart is empty
                 </div>
                 <ng-container *ngFor="let item of cartItems">
                     <ng-template [ngTemplateOutlet]="cartTemplate" [ngTemplateOutletContext]="{ $implicit: item }">
                     </ng-template>
                </ng-container>
-            </div>  
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>  
-        </div>
-        <div class="grid-top">
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item">
-                <p class="checkout bottom primary-color">total: &#8377;{{totalPrice}}</p>
-            </div>  
-            <div class="grid-item pointer" [class.disabled]="isCartEmpty" (click)="go_to_order()">
-                <p class="checkout bottom primary-color">checkout</p>
+            </div>
+            <div class="grid-item pointer-none" *ngIf="!isCartEmpty">
+                <div class="cart primary-color">total: &#8377;{{totalPrice}}</div>
+            </div>
+            <div class="grid-item pointer" *ngIf="!isCartEmpty" (click)="go_to_order()">
+                <div class="cart primary-color">checkout</div>
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #greggyTemplate let-product>
+    <div class="grid-item pointer greggy" (click)="back_to_product()"></div>
+</ng-template>
 
 <ng-template #cartTemplate let-item>
     <div class="description">

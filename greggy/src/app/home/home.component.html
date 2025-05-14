@@ -1,22 +1,28 @@
 <div class="container">
     <div class="grid-container">
-        <div class="grid-top">
-            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
-            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
-            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>  
-            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
+        <div class="grid-top desktop">
+            <ng-container *ngFor="let n of xyz">
+                <ng-template [ngTemplateOutlet]="blankTemplate">
+                </ng-template>
+           </ng-container>
         </div>
-        <div class="grid-mid">
+        <div class="grid-mid desktop">
             <ng-container *ngFor="let n of nums">
                 <ng-template [ngTemplateOutlet]="greggyShopTemplate">
                 </ng-template>
            </ng-container>    
         </div>
-        <div class="grid-top">
-            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
-            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
-            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>  
-            <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
+        <div class="grid-top desktop">
+            <ng-container *ngFor="let n of xyz">
+                <ng-template [ngTemplateOutlet]="blankTemplate">
+                </ng-template>
+           </ng-container>
+        </div>
+        <div class="mobile" *ngIf="logo_clicked">
+            <ng-container *ngFor="let n of xyz">
+                <ng-template [ngTemplateOutlet]="greggyShopTemplate">
+                </ng-template>
+            </ng-container>
         </div>
     </div>
     <div class="center-box" *ngIf="!logo_clicked">
@@ -31,4 +37,8 @@
     <div class="grid-item pointer" (click)="to_catalogues()">
         <p class="shop" *ngIf="logo_clicked">shop</p>
     </div>
+</ng-template>
+
+<ng-template #blankTemplate let-product>
+    <div class="grid-item" [ngClass]="{'pointer' : logo_clicked}" (click)="to_catalogues()"></div>
 </ng-template>

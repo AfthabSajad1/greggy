@@ -5,7 +5,7 @@ import {CommonModule, Location} from '@angular/common';
 @Component({
   selector: 'app-order',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './order.component.html',
   styleUrl: './order.component.scss'
 })

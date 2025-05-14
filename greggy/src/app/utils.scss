@@ -36,10 +36,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-origin: content-box;
+    background-color: $secondary_color;
 }
 
 .greggy:hover{
     background-image: url(./../assets/logos/greggy_secondary.png);
+    background-color: $primary_color;
 }
 .greggy-secondary{
     background-image: url(./../assets/logos/greggy_secondary.png);
@@ -47,10 +49,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-origin: content-box;
+    background-color: $primary_color;
 }
 
 .greggy-secondary:hover{
     background-image: url(./../assets/logos/greggy_primary.png);
+    background-color: $secondary_color;
 }
 
 .top{

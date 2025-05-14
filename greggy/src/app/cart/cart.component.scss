@@ -2,118 +2,228 @@
 @import './../utils.scss';
 
 
-.container{
-    height: 100vh;
-    width: 100vw;
-    background-color: $secondary_color;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media (min-width: 768px){
+    .container{
+        height: 100vh;
+        width: 100vw;
+        background-color: $secondary_color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .grid-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    
+    .grid-mid{
+        height: 77vh;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .grid-top{
+        height: 11.5vh;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .grid-item{
+        border: 0.25vh solid $primary_color;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .pointer:hover p{
+        color: $secondary_color;
+    }
+    
+    .pointer:hover{
+        color: $secondary_color;
+        background-color: $primary_color;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .pointer:hover .arrow{
+        display: none;
+    }
+    
+    .pointer:hover .arrow-hover{
+        display: block;
+    }
+    
+    .arrow-hover{
+        display: none;
+    }
+    
+    .desc-grid{
+        grid-column: 3 / span 2;
+        grid-row: 1 / span 2;
+    }
+    
+    .description{
+        width: 100%;
+        color: $primary_color;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4vh ;
+    }
+    
+    .img{
+        width: 10vw;
+        height: 20vh;   
+    }
+    
+    .item-list{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .list{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .button{
+        display: flex;
+        justify-content: center;
+        background-color: $primary-color;
+        color: $secondary_color;
+        border-radius: 1.5vh;
+        width: 5vh;
+        margin: 1vh;
+    }
+    
+    .quantity{
+        display: flex;
+        justify-content: center;
+        margin: 1vh;
+    }
+    
+    .product-summary{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .price{
+        font-size: 3vh;
+    }
+
+    .desktop{
+        display: block;
+    }
+
+    .mobile{
+        display: none;
+    }
 }
 
-.grid-container{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
+@media (max-width: 767px){
 
-.grid-mid{
-    height: 77vh;
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-}
+    .desktop{
+        display: none;
+    }
 
-.grid-top{
-    height: 11.5vh;
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
+    .mobile{
+        display: block;
+    }
 
-.grid-item{
-    border: 0.25vh solid $primary_color;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-}
+    .container{
+        height: 100vh;
+        // width: 100vw;
+        background-color: $secondary_color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .grid-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: $secondary_color;
+    }
 
-.pointer:hover p{
-    color: $secondary_color;
-}
+    .grid-top{
+        height: 15vh;
+        width: auto;
+        display: grid;
+        
+    }
+    
+    .grid-item{
+        border: 0.25vh solid $primary_color;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        background-color: $secondary_color;
+    }
+    
+    .desc{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.5vh ;
+        margin: 10.7vh auto;
+        color: $primary_color;
+        text-align: center;
+    }
 
-.pointer:hover{
-    color: $secondary_color;
-    background-color: $primary_color;
-    transition: background-color 0.3s, color 0.3s;
-}
+    .cart{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 8vh;
+        margin: 5vh auto 5vh auto;
+    }
+ 
+    .description{
+        width: 100%;
+        color: $primary_color;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4vh ;
+    }
+    
+    .img{
+        width: 30vw;
+        height: 20vh;   
+    }
+    
+    .item-list{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .list{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .button{
+        display: flex;
+        justify-content: center;
+        background-color: $primary-color;
+        color: $secondary_color;
+        border-radius: 1.5vh;
+        width: 5vh;
+        margin: 1vh;
+    }
+    
+    .quantity{
+        display: flex;
+        justify-content: center;
+        margin: 1vh;
+    }
 
-.pointer:hover .arrow{
-    display: none;
-}
-
-.pointer:hover .arrow-hover{
-    display: block;
-}
-
-.arrow-hover{
-    display: none;
-}
-
-.desc-grid{
-    grid-column: 3 / span 2;
-    grid-row: 1 / span 2;
-}
-
-.description{
-    width: 100%;
-    color: $primary_color;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 4vh ;
-}
-
-.img{
-    width: 10vw;
-    height: 20vh;   
-}
-
-.item-list{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.list{
-    display: flex;
-    flex-direction: row;
-}
-
-.button{
-    display: flex;
-    justify-content: center;
-    background-color: $primary-color;
-    color: $secondary_color;
-    border-radius: 1.5vh;
-    width: 5vh;
-    margin: 1vh;
-}
-
-.quantity{
-    display: flex;
-    justify-content: center;
-    margin: 1vh;
-}
-
-.product-summary{
-    display: flex;
-    flex-direction: column;
-}
-
-.price{
-    font-size: 3vh;
 }
